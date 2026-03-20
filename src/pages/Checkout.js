@@ -2,7 +2,7 @@ import { useCart } from "../context/CartContext";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../firebase";
-import { collection, doc, setDoc, Timestamp } from "firebase/firestore";
+import { doc, setDoc, Timestamp } from "firebase/firestore";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
 import "./Checkout.css";
