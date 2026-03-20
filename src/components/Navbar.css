@@ -1,0 +1,369 @@
+/* ================= MEGA NAVBAR BASE ================= */
+.mega-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4%;
+  height: 80px;
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.mega-navbar.scrolled {
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* ================= LEFT: LOGO ================= */
+.mega-logo {
+  font-size: 26px;
+  font-weight: 900;
+  color: #111827;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.mega-logo .dot {
+  color: #ff3f6c;
+  /* Signature Myntra/D2C pink accent */
+}
+
+/* ================= CENTER: LINKS ================= */
+.nav-center {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 0;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #ff3f6c;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background-color: #ff3f6c;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ================= RIGHT: ACTIONS ================= */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* Search */
+.mega-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 250px;
+  transition: background 0.2s ease;
+}
+
+.mega-search:focus-within {
+  background: #e5e7eb;
+}
+
+.search-icon {
+  font-size: 14px;
+  margin-right: 10px;
+  opacity: 0.5;
+}
+
+.mega-search input {
+  border: none;
+  background: transparent;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #111827;
+}
+
+/* Profile Menu */
+.mega-profile {
+  position: relative;
+}
+
+.mega-profile::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: -20px;
+  right: -20px;
+  height: 25px;
+  /* bridges the 15px gap */
+  background: transparent;
+  z-index: 10;
+}
+
+.profile-trigger {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  color: #374151;
+  transition: color 0.2s ease;
+}
+
+.profile-trigger:hover {
+  color: #ff3f6c;
+}
+
+.profile-icon {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.profile-name {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Dropdown Wrapper */
+.mega-dropdown-wrapper {
+  position: absolute;
+  top: 100%;
+  right: -20px;
+  padding-top: 20px;
+  /* Physics bridge */
+  z-index: 9999;
+}
+
+/* Dropdown */
+.mega-dropdown {
+  width: 280px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  border: 1px solid #f1f5f9;
+  padding: 0;
+  overflow: hidden;
+  animation: dropFade 0.2s ease-out;
+  position: relative;
+}
+
+.mega-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  right: 25px;
+  border-width: 0 10px 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+@keyframes dropFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-header {
+  padding: 20px;
+  background: #fafafa;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.dropdown-header h3 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.dropdown-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 15px;
+}
+
+.manage-account-link {
+  display: inline-block;
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.manage-account-link:hover {
+  color: #ff3f6c;
+  text-decoration: underline;
+}
+
+.dropdown-login-btn {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ff3f6c;
+  background: transparent;
+  color: #ff3f6c;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.dropdown-login-btn:hover {
+  background: #ff3f6c;
+  color: white;
+}
+
+.dropdown-links {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-links a {
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #475569;
+  font-weight: 500;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-links a:hover {
+  background: #f8fafc;
+  color: #ff3f6c;
+}
+
+.admin-link {
+  border-top: 1px solid #f1f5f9;
+  color: #2563eb !important;
+  font-weight: 600 !important;
+}
+
+.admin-link:hover {
+  background: #eff6ff !important;
+}
+
+.dropdown-footer {
+  padding: 10px;
+  border-top: 1px solid #f1f5f9;
+  background: #fafafa;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #fee2e2;
+  color: #ef4444;
+  font-weight: 700;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #fca5a5;
+  color: white;
+}
+
+/* Cart */
+.mega-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #374151;
+  position: relative;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.mega-cart:hover {
+  color: #ff3f6c;
+}
+
+.cart-icon {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.cart-text {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background: #ff3f6c;
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 10px;
+  border: 2px solid white;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .mega-search {
+    width: 200px;
+  }
+
+  .nav-center {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 992px) {
+  .mega-search {
+    display: none;
+  }
+
+  .nav-center {
+    display: none;
+  }
+}

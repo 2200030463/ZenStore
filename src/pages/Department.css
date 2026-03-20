@@ -1,0 +1,256 @@
+/* ================= DEPARTMENT BASE ================= */
+.department-page {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: #282c3f;
+    background-color: #fceaea;
+    /* Subtle Myntra background tint for promos */
+    animation: fadeIn 0.4s ease;
+    padding-bottom: 60px;
+}
+
+/* ================= MEGA HERO BANNER ================= */
+.dept-hero {
+    position: relative;
+    height: 60vh;
+    min-height: 450px;
+    background-size: cover;
+    background-position: center 30%;
+    margin-bottom: 50px;
+}
+
+.dept-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.dept-title {
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.dept-subtitle {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ================= SECTION TITLES ================= */
+.dept-section {
+    padding: 0 4%;
+    margin-bottom: 70px;
+}
+
+.dept-section-title {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #3e4152;
+    text-transform: uppercase;
+}
+
+/* ================= CATEGORIES TO BAG (MYNTRA CIRCLES) ================= */
+.dept-categories {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.dept-circle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 150px;
+    transition: transform 0.3s ease;
+}
+
+.dept-circle-card:hover {
+    transform: translateY(-8px);
+}
+
+.dept-circle-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 4px solid white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    background: white;
+}
+
+.dept-circle-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dept-circle-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #282c3f;
+    margin: 0;
+    text-align: center;
+}
+
+/* ================= BIGGEST DEALS ================= */
+.deals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.deal-card {
+    position: relative;
+    background: #ff3f6c;
+    /* Myntra Pink */
+    height: 250px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(255, 63, 108, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.deal-card:nth-child(2) {
+    background: #5a4bdf;
+}
+
+.deal-card:nth-child(3) {
+    background: #166534;
+}
+
+.deal-card:hover {
+    transform: translateY(-5px);
+}
+
+.deal-info {
+    text-align: center;
+    z-index: 2;
+}
+
+.deal-info h4 {
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+.deal-info p {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* ================= EXPLORE TOP BRANDS ================= */
+.brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.brand-card {
+    background: white;
+    height: 140px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.brand-text-logo {
+    font-size: 22px;
+    font-weight: 900;
+    color: #475569;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+    text-align: center;
+    transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.brand-card:hover .brand-text-logo {
+    color: #0f172a;
+    letter-spacing: 4px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+    .dept-title {
+        font-size: 40px;
+    }
+
+    .deals-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .dept-title {
+        font-size: 30px;
+    }
+
+    .dept-subtitle {
+        font-size: 14px;
+    }
+
+    .dept-circle-card {
+        width: 110px;
+    }
+
+    .dept-circle-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .deals-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .brand-card {
+        padding: 20px;
+        height: 100px;
+    }
+}

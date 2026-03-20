@@ -1,0 +1,444 @@
+/* ================= GLOBAL RESET & CONTAINER ================= */
+.home-container {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+/* ================= FASHION HERO (Snitch/HM) ================= */
+.fashion-hero {
+  position: relative;
+  height: 90vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: black;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+.hero-video-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=2070&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center 20%;
+  opacity: 0.9;
+}
+
+.fashion-hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  margin-top: 100px;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fashion-title {
+  font-size: 80px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.fashion-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin: 15px 0 40px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.fashion-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-dark-solid,
+.btn-light-solid {
+  padding: 16px 40px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-dark-solid {
+  background: #111827;
+  color: white;
+  border: 1px solid #111827;
+}
+
+.btn-dark-solid:hover {
+  background: white;
+  color: #111827;
+}
+
+.btn-light-solid {
+  background: white;
+  color: #111827;
+  border: 1px solid white;
+}
+
+.btn-light-solid:hover {
+  background: #111827;
+  color: white;
+}
+
+/* ================= TRENDING SECTION (Snitch Cards) ================= */
+.trending-section {
+  padding: 80px 4%;
+  background: white;
+}
+
+.section-title-center {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title-center h2 {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.trending-scroller {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.trend-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+  background: #f1f5f9;
+}
+
+.trend-card img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.trend-card:hover img {
+  transform: scale(1.03);
+}
+
+.trend-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 25px 20px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  color: white;
+}
+
+.trend-info h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 5px 0;
+  letter-spacing: 1px;
+}
+
+.trend-info p {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ================= HM STYLE SPLIT BANNER ================= */
+.hm-split-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 60vh;
+  min-height: 500px;
+}
+
+.split-half {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.split-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.split-half:hover .split-bg {
+  transform: scale(1.05);
+}
+
+.split-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+.split-text h2 {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin: 0 0 10px 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.split-text span {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 10px 25px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ================= SHOP BY DEPARTMENT (Myntra Circles/Blocks) ================= */
+.department-section {
+  padding: 80px 4%;
+  background: #f8fafc;
+}
+
+.department-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.dept-item {
+  width: 160px;
+  height: 160px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: 1px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dept-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  background: #111827;
+  color: white;
+}
+
+/* ================= FASHION FOOTER (Myntra/Snitch) ================= */
+.fashion-footer {
+  background: #f9fafb;
+  padding: 80px 4% 30px;
+  color: #333;
+  border-top: 1px solid #e5e7eb;
+}
+
+.footer-top-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.5fr 1fr;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-column h3 {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  letter-spacing: 1px;
+}
+
+.footer-column p {
+  font-size: 14px;
+  color: #696e79;
+  margin: 0 0 10px 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-column p:hover {
+  color: #ff3f6c;
+  /* Myntra Pink */
+  font-weight: 600;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.download-btn {
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 15px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: #e5e7eb;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+}
+
+.guarantees {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.guarantee-item {
+  font-size: 14px;
+  color: #696e79;
+  line-height: 1.5;
+}
+
+.guarantee-item strong {
+  color: #282c3f;
+}
+
+.footer-search-tags {
+  border-top: 1px solid #e5e7eb;
+  padding: 30px 0;
+}
+
+.footer-search-tags strong {
+  font-size: 14px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.footer-search-tags p {
+  font-size: 13px;
+  color: #696e79;
+  line-height: 2;
+}
+
+.footer-copyright {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #696e79;
+  font-weight: 600;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .fashion-title {
+    font-size: 60px;
+  }
+
+  .trending-scroller {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footer-top-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .fashion-title {
+    font-size: 40px;
+  }
+
+  .fashion-actions {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .hm-split-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .department-grid {
+    gap: 15px;
+  }
+
+  .dept-item {
+    width: 120px;
+    height: 120px;
+    font-size: 14px;
+  }
+
+  .footer-top-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-copyright {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}

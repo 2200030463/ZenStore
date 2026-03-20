@@ -1,0 +1,153 @@
+.about-page {
+    background: #f8f9fa;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+.about-hero {
+    position: relative;
+    height: 350px;
+    background-image: url("https://images.unsplash.com/photo-1542435503-956c2c10b7ee?w=1600");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 40px 60px;
+    border-radius: 12px;
+    backdrop-filter: blur(8px);
+    animation: fadeInDown 0.8s ease;
+}
+
+.about-overlay h1 {
+    font-size: 48px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about-overlay p {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: -60px auto 0;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.about-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.about-card h2,
+.about-card h3 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.about-card h2::after,
+.about-card h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 60px;
+    background: #ff3f6c;
+    border-radius: 2px;
+}
+
+.about-bio,
+.mission-section p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a4a4a;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-list li {
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-icon {
+    font-size: 24px;
+}
+
+.contact-list a {
+    color: #ff3f6c;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-list a:hover {
+    color: #e0325b;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-overlay h1 {
+        font-size: 36px;
+    }
+
+    .about-card {
+        padding: 30px;
+    }
+
+    .about-card h2,
+    .about-card h3 {
+        font-size: 24px;
+    }
+}
